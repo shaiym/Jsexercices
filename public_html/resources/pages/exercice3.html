@@ -12,13 +12,27 @@
         <header><h1 style="text-align:center">LES VARIABLES</h1></header>
         <div id="exercice3">
             <ul>
+                <div> <span id="variableToDisplay">est la valeur par défaut</span><span id="var2"></span> <br/></div>
                 <li>Créer une variable appelée variableToDisplay</li>
                 <li>L’initialiser avec un objet de type number</li>
                 <li>Créer une seconde variable et l’initier à la valeur variable2</li>
                 <li>Modifier la valeur de la variable dont la valeur par défaut est variable2</li>
                 <li>Créer un champ text dans lequel sont affichées les variables variableToDisplay et celle dont la valeur par défaut est variable2</li>
             </ul>
-        </div>   
+        </div>  
+        <script> 
+               
+            var variableToDisplay;
+            var variableToDisplay = 21;
+            var var2="variable2";
+            
+                document.getElementById("variableToDisplay").innerHTML =variableToDisplay;
+                document.getElementById("variable2").innerHTML =var2;
+            
+           
+        
+        
+        </script>
         <script src="../js/classie.js"></script>
         <script src="../js/gnmenu.js"></script>
         <script>
