@@ -14,11 +14,11 @@
         <br/>
         <div>
             <div id="exercice5" style="float:left; width:350px; margin-left:20px">
-                <form name="departementListForm"> 
-                    Dites-moi dans quel département vous vivez et je vous dirai dans quelle région il se situe.<br/> 
+                <form name="mesListes"> 
+                    Dites-moi dans quel région vous vivez et je vous dirai dans quelle département vous vous trouvez?.<br/> 
                     <br/>
-                    <select name="departementList" onChange="getRegion(value)"> 
-                        <option SELECTED>-- Sélectionnez le département où vous vivez --</option> 
+                    <select name="listederoul" onChange="getRegion(value)"> 
+                        <option SELECTED>-- Sélectionnez la région où vous vivez --</option> 
                     </select> 
                 </form>
                 <br/>
@@ -30,20 +30,49 @@
                 <span style="margin-left:20px;">Dites-moi quel âge vous avez</span><br/>
                 <span style="margin-left:20px;">et je vous dirai qui vous êtes.</span><br/> 
                 <br/>
-                <input id="age" style="margin-left:20px;" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onChange="giveFeature(value)" value=""></input>
+                <input id="age" style="margin-left:20px;" type="text" onkeypress='return event.which >= 48 && event.which <= 57  || event.which == 8 || event.which === 127' onkeyup="giveFeature(value)" value="" />
                 <br/>
                 <br/>
-                <div id="resultat"></div>
+                <div id="resultat">
+                    <span id="nb1"></span>
+                    <span id="nb2"></span>
+                    <span id="nb3"></span>
+                    <span id="nb4"></span>
+                    <span id="nb5"></span>
+                    <span id="nb6"> </span>
+                </div>
+               Homme  <input type="radio" name="sexe" value="Homme" />
+               Femme <input type="radio" name="sexe" value="Femme" />
             </div>
+            <script src="../js/age.js"></script>
         </div>
+        <div id="listederoul"></div>
         <img id="deMorgan" src="../img/tableau-produit-logique.png" style="width:100%;">
         <script type="text/javascript">
-            fonction runCode()
-            {
-                var number 
-                var departement = number
-                departement = prompt('Votre département ?');
-            }
+           // Création du tableau contenu dans chaque listes déroulantes
+listerégion = new Array();
+listerégion[0] = "Auvergne-Rhône-Alpes";
+listerégion[1] = "Bourgogne-Franche-Comté";
+listerégion[2] = "Bretagne";
+listerégion[3] = "Centre-Val de Loire";
+listerégion[4] = "Corse";
+listerégion[5] = "Grand Est";
+listerégion[6] = "Hauts-de-France";
+listerégion[7] = "Île-de-France";
+listerégion[8] = "Normandie";
+listerégion[9] = "Nouvelle-Aquitaine";
+listerégion[10] = "Occitanie";
+listerégion[11] = "Pays de la Loire";
+listerégion[12] = "Provence-Alpes-Côte d'Azur";
+listerégion[13] = "Guadeloupe";
+listerégion[14] = "Martinique";
+listerégion[15] = "Guyane";
+listerégion[16] = "La Réunion";
+listerégion[17] = "Mayotte";
+
+
+document.getElementById("listederoul").innerHTML = mesListes();
+// fin création dynamique des listes déroulantes
         </script>  
         <script src="../js/regions.js"></script>
         <script src="../js/classie.js"></script>
